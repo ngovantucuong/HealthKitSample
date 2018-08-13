@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,62 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleHealthCFP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBB-zN-foZ">
+                                <rect key="frame" x="16" y="220" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cC8-ZS-neM"/>
+                                </constraints>
+                                <state key="normal" title="Authorise Health Access"/>
+                                <connections>
+                                    <action selector="authoriseHealthKitAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfQ-LF-VWv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9v-dw-kaF">
+                                <rect key="frame" x="149" y="416" width="76" height="30"/>
+                                <state key="normal" title="Gets Steps"/>
+                                <connections>
+                                    <action selector="getStepsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ne-zF-hmD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxg-Xm-9Vt">
+                                <rect key="frame" x="16" y="295" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Walking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-po-OV4">
+                                <rect key="frame" x="16" y="356" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uxg-Xm-9Vt" firstAttribute="top" secondItem="pBB-zN-foZ" secondAttribute="bottom" constant="45" id="89k-cg-wHe"/>
+                            <constraint firstItem="GIi-po-OV4" firstAttribute="trailing" secondItem="Uxg-Xm-9Vt" secondAttribute="trailing" id="AGc-a5-KEv"/>
+                            <constraint firstItem="GIi-po-OV4" firstAttribute="top" secondItem="Uxg-Xm-9Vt" secondAttribute="bottom" constant="40" id="Eny-nH-NIZ"/>
+                            <constraint firstItem="pBB-zN-foZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="IQc-6P-RRC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pBB-zN-foZ" secondAttribute="trailing" constant="16" id="NiW-Ti-wG9"/>
+                            <constraint firstItem="pBB-zN-foZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RYH-1k-lhP"/>
+                            <constraint firstItem="Uxg-Xm-9Vt" firstAttribute="leading" secondItem="pBB-zN-foZ" secondAttribute="leading" id="Tyd-S8-Mkx"/>
+                            <constraint firstItem="T9v-dw-kaF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aYJ-Ef-pnO"/>
+                            <constraint firstItem="Uxg-Xm-9Vt" firstAttribute="trailing" secondItem="pBB-zN-foZ" secondAttribute="trailing" id="gWj-qg-Ocu"/>
+                            <constraint firstItem="GIi-po-OV4" firstAttribute="leading" secondItem="Uxg-Xm-9Vt" secondAttribute="leading" id="k2m-o2-TgD"/>
+                            <constraint firstItem="pBB-zN-foZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qXE-bP-2SU"/>
+                            <constraint firstItem="T9v-dw-kaF" firstAttribute="top" secondItem="Uxg-Xm-9Vt" secondAttribute="bottom" constant="100" id="uXA-0q-fGX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="distanceWalkingLabel" destination="GIi-po-OV4" id="f6g-vU-djQ"/>
+                        <outlet property="totalStepsLabel" destination="Uxg-Xm-9Vt" id="bNt-iK-GDH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
